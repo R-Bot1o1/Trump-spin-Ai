@@ -359,7 +359,7 @@
       overflow: hidden;
     }
 
-    #introVideo {
+    /* #introVideo {
       position: fixed;
       top: 0;
       left: 0;
@@ -367,17 +367,17 @@
       height: 100%;
       object-fit: cover;
       z-index: 1000;
-    }
-    #mainContent {
+    } */
+    /* #mainContent {
       display: none;
-    }
+    } */
   </style>
 </head>
 <body>
-  <video id="introVideo" autoplay>
+  <!-- <video id="introVideo" autoplay>
     <source src="entry.mp4" type="video/mp4">
     Your browser does not support HTML5 video.
-  </video>
+  </video> -->
 
   <div id="mainContent">
     <video autoplay muted loop id="backgroundVideo">
@@ -652,7 +652,7 @@
         door.style.animation = 'openDoor 2s forwards';
       });
     </script>
-    <script>
+    <!-- <script>
       document.addEventListener('DOMContentLoaded', function() {
         const introVideo = document.getElementById('introVideo');
         const introAudio = document.getElementById('introAudio');
@@ -686,6 +686,6 @@
     document.getElementById('introVideo').style.display = 'none';
     document.getElementById('mainContent').style.display = 'block';
   });
-</script>
+</script> -->
 </body>
 </html>
