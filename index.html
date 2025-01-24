@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trump Spin AI</title>
+  <title>Monkey Spin AI</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
   <link href="popup.css" rel="stylesheet">
   <style>
@@ -570,7 +570,7 @@
 
     /////IMPORTANT PART BELOW/////
  
-      const JUP_ADDRESS = "zJkjcqRpGKpT2Ux6TNiV2eee93NgrHkuysBkC9spump";
+      const JUP_ADDRESS = "7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump";
       const TOTAL_SUPPLY = 1000000000;
       let rotationSpeed = 0.01;
  
@@ -687,5 +687,19 @@
     document.getElementById('mainContent').style.display = 'block';
   });
 </script> -->
+<!-- Add this at the end of the body tag -->
+<button id="copyButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Click to Copy CA</button>
+
+<script>
+  document.getElementById('copyButton').addEventListener('click', function() {
+    // Replace 'JUP_ADDRESS' with the actual address you want to copy
+    const jupAddress = '7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump';
+    navigator.clipboard.writeText(jupAddress).then(function() {
+      alert('CA copied to clipboard!');
+    }, function(err) {
+      console.error('Could not copy text: ', err);
+    });
+  });
+</script>
 </body>
 </html>
