@@ -455,7 +455,7 @@
       overflow: hidden;
     }
 
-    .speed-control-background-video {
+    .speed-background-video {
       position: absolute;
       top: 0;
       left: 0;
@@ -463,7 +463,7 @@
       height: 100%;
       object-fit: cover;
       z-index: -1;
-      opacity: 0.8; /* Adjust opacity as needed */
+      opacity: 0.8;
     }
 
     /* #introVideo {
@@ -590,11 +590,7 @@
     <div id="loading" class="cyber-panel px-8 py-4" style="display: none;">
       Initializing TRUMP SPIN AI...
     </div>
-    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: rgb(250, 250, 253); position: relative; overflow: hidden;">
-      <video autoplay muted loop class="speed-control-background-video">
-        <source src="liberty.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
+    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: rgb(250, 250, 253);">
       <input type="range" class="custom-slider" id="speedSlider" min="0.01" max="2" step="0.01" value="0.01">
       <div class="flex items-center justify-between">
         <label class="toggle-switch">
@@ -605,14 +601,19 @@
       </div>
     </div>
     <div class="fixed-speed cyber-panel p-4 text-center">
-        <div>Spin Speed</div>
-        <div class="speed-indicator">
-          <div id="speedBar" class="speed-bar" style="width: 0.0444921%;"></div>
-          <div class="speed-labels">
-            <span>5K</span>
-            <span>10M</span>
-          </div>
+      <video autoplay muted loop id="speedBackgroundVideo" class="speed-background-video">
+        <source src="liberty.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+      <div>Spin Speed</div>
+      <div class="speed-indicator">
+        <div id="speedBar" class="speed-bar" style="width: 0.0444921%;"></div>
+        <div class="speed-labels">
+          <span>5K</span>
+          <span>10M</span>
         </div>
+      </div>
+    </div>
        
       </div>
 
