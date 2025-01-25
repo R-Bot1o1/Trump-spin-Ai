@@ -455,6 +455,17 @@
       overflow: hidden;
     }
 
+    .speed-control-background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.8; /* Adjust opacity as needed */
+    }
+
     /* #introVideo {
       position: fixed;
       top: 0;
@@ -579,7 +590,11 @@
     <div id="loading" class="cyber-panel px-8 py-4" style="display: none;">
       Initializing TRUMP SPIN AI...
     </div>
-    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: rgb(250, 250, 253);">
+    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: rgb(250, 250, 253); position: relative; overflow: hidden;">
+      <video autoplay muted loop class="speed-control-background-video">
+        <source src="liberty.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
       <input type="range" class="custom-slider" id="speedSlider" min="0.01" max="2" step="0.01" value="0.01">
       <div class="flex items-center justify-between">
         <label class="toggle-switch">
