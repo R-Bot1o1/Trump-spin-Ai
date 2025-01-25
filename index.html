@@ -82,7 +82,7 @@
       overflow: hidden;
     }
 
-    .cyber-panel::before {
+    /* .cyber-panel::before {
       content: "";
       position: absolute;
       top: -50%;
@@ -97,7 +97,7 @@
       );
       transform: rotate(45deg);
       animation: shine 6s infinite;
-    }
+    } */
 
     #copyButton{
       width: auto;
@@ -109,7 +109,7 @@
       box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
     }
 
-    #copyButton::before {
+    /* #copyButton::before {
       content: "";
       position: absolute;
       top: -50%;
@@ -124,13 +124,48 @@
       );
       transform: rotate(45deg);
       animation: shine 6s infinite;
-    }    
+    }     */
 
     #copyButton:hover {
       box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
       inset 0 0 30px rgba(0, 255, 242, 0.2);
       border-color: rgba(0, 255, 242, 0.3);
-    }    
+    }  
+
+    #muteButton{
+      width: auto;
+      font-size: 30px;
+      padding: 8px 140px;
+      cursor: pointer;
+      background: rgba(6, 7, 20, 0.8);
+      transition-duration: 200ms;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    /* #muteButton::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 242, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: shine 6s infinite;
+    }     */
+
+    #muteButton:hover {
+      box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
+      inset 0 0 30px rgba(0, 255, 242, 0.2);
+      border-color: rgba(0, 255, 242, 0.3);
+    }  
+    
+    
 
     .cyber-panel:hover {
       box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
@@ -295,7 +330,7 @@
       pointer-events: none;
       z-index: 997;
     }
-    .speed-control {
+    .speed-control{
       display: block;
       position: fixed;
       top: 75%;
@@ -309,7 +344,7 @@
       z-index: 998;
     }
 
-    .speed-control::before {
+    /* .speed-control::before {
       content: "";
       position: absolute;
       top: -50%;
@@ -326,7 +361,7 @@
       animation: shine 6s infinite;
       margin: 0 auto;
       max-width: 300px;
-    }   
+    }    */
 
     .speed-control:hover {
       box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
@@ -460,7 +495,7 @@
         max-width: 200px;
         padding: 10px;
         top: 65%;
-        left: 22.5%;
+        left: 25.5%;
       }
 
       .custom-slider {
@@ -519,7 +554,7 @@
           
           <p style="color: rgb(8, 0, 0); font-weight: bold;">Current market cap</p>
           <div class="cyber-panel px-6 py-3" id="marketCap">$9,447</div>
-          <p style="color: rgb(8, 0, 0); font-weight: bold;">Pasteca</p>
+          <p style="color: rgb(8, 0, 0); font-weight: bold;">PasteCA</p>
         </div>
       </div>
     </div>
@@ -565,6 +600,42 @@
         </div>
        
       </div>
+
+
+      <button id="muteButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Mute</button>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          var audio = document.getElementById("audio");
+          var muteButton = document.getElementById("muteButton");
+      
+          // Set volume to 40% (reduce by 60%)
+          audio.volume = 0.4;
+      
+          // Play audio after user interaction
+          document.addEventListener('click', function() {
+            if (audio.paused) {
+              audio.play();
+            }
+          });
+      
+          // Mute button functionality
+          muteButton.addEventListener('click', function() {
+            if (audio.muted) {
+              audio.muted = false;
+              muteButton.textContent = 'Mute';
+            } else {
+              audio.muted = true;
+              muteButton.textContent = 'Unmute';
+            }
+          });
+      
+          // Play audio when the page is loaded
+          audio.play().catch(function(error) {
+            console.log('Audio play was prevented:', error);
+          });
+        });
+      </script>  
  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script type="importmap">
@@ -672,7 +743,7 @@
 
     /////IMPORTANT PART BELOW/////
  
-      const JUP_ADDRESS = "Pasteca";
+      const JUP_ADDRESS = "PasteCA";
       const TOTAL_SUPPLY = 1000000000;
       let rotationSpeed = 0.01;
  
@@ -793,7 +864,7 @@
 <button id="copyButton" style="position: fixed; bottom: 50%; right: 20%; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Click to Copy CA</button>
 <div class="copyfield">
   <!-- Add real ca here!! -->
-  <span id="link" visiblility: hidden>Pasteca</span>
+  <span id="link" visiblility: hidden>PasteCA</span>
   <span id="copyButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;" visiblility: hidden>Copy</span>
 </div>
 <script>
@@ -812,7 +883,7 @@
 
   // document.getElementById('copyButton').addEventListener('click', function() {
   //   // Replace 'JUP_ADDRESS' with the actual address you want to copy
-  //   const jupAddress = 'Pasteca';
+  //   const jupAddress = '7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump';
   //   navigator.clipboard.writeText(jupAddress).then(function() {
   //     alert('CA copied to clipboard!');
   //   }, function(err) {
