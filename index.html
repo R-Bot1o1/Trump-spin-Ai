@@ -99,6 +99,39 @@
       animation: shine 6s infinite;
     }
 
+    #copyButton{
+      width: auto;
+      font-size: 30px;
+      padding: 8px 140px;
+      cursor: pointer;
+      background: rgba(6, 7, 20, 0.8);
+      transition-duration: 200ms;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.5);
+    }
+
+    #copyButton::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 242, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: shine 6s infinite;
+    }    
+
+    #copyButton:hover {
+      box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
+      inset 0 0 30px rgba(0, 255, 242, 0.2);
+      border-color: rgba(0, 255, 242, 0.3);
+    }    
+
     .cyber-panel:hover {
       box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
         inset 0 0 30px rgba(0, 255, 242, 0.2);
@@ -120,7 +153,7 @@
       justify-content: space-between;
       width: 100%;
       margin-top: 8px;
-      color: var(--neon-blue);
+      color: var(--neon-white);
       font-size: 12px;
     }
 
@@ -133,6 +166,8 @@
       position: relative;
       overflow: hidden;
     }
+
+
 
     .speed-bar::after {
       content: "";
@@ -274,6 +309,29 @@
       z-index: 998;
     }
 
+    .speed-control::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(0, 255, 242, 0.1),
+        transparent
+      );
+      transform: rotate(45deg);
+      animation: shine 6s infinite;
+    }   
+
+    .speed-control:hover {
+      box-shadow: 0 0 50px rgba(0, 255, 242, 0.3),
+      inset 0 0 30px rgba(0, 255, 242, 0.2);
+      border-color: rgba(0, 255, 242, 0.3);
+    }    
+
     .toggle-switch {
       position: relative;
       display: inline-block;
@@ -339,10 +397,11 @@
       z-index: -1;
     }
 
-    .fixed.left-6.top-1.-translate-y-1/2.cyber-panel.p-6.max-w-xs.space-y-4.z-10 {
-      position: relative;
-      overflow: hidden;
+    .fixed.left-6.top-1.-translate-y-1/2, .cyber-panel.p-6.max-w-xs.space-y-4.z-10 {
+          position: relative;
+          overflow: hidden;
     }
+
 
     .header-background-video {
       position: absolute;
@@ -442,7 +501,7 @@
     <div id="loading" class="cyber-panel px-8 py-4" style="display: none;">
       Initializing TRUMP SPIN AI...
     </div>
-    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: blue;">
+    <div class="speed-control" style="border: 2px solid rgb(0, 0, 0); color: rgb(250, 250, 253);">
       <input type="range" class="custom-slider" id="speedSlider" min="0.01" max="2" step="0.01" value="0.01">
       <div class="flex items-center justify-between">
         <label class="toggle-switch">
@@ -498,7 +557,7 @@
         modeLabel.textContent = isDegenMode ? "DEGEN MODE" : "NORMAL MODE";
         modeLabel.style.color = isDegenMode
           ? "var(--neon-pink)"
-          : "var(--neon-blue)";
+          : "var(--neon-white)";
  
         if (!isDegenMode) {
           updateMarketCap();
@@ -688,18 +747,37 @@
   });
 </script> -->
 <!-- Add this at the end of the body tag -->
-<button id="copyButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Click to Copy CA</button>
-
+<button id="copyButton" style="position: fixed; bottom: 50%; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Click to Copy CA</button>
+<div class="copyfield">
+  <!-- Add real ca here!! -->
+  <span id="link" visiblility: hidden>78d6PZWwkYpLtFG7rnuUkU6XgaNQcSASug6T6c83bnfh</span>
+  <span id="copyButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;" visiblility: hidden>Copy</span>
+</div>
 <script>
-  document.getElementById('copyButton').addEventListener('click', function() {
-    // Replace 'JUP_ADDRESS' with the actual address you want to copy
-    const jupAddress = '7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump';
-    navigator.clipboard.writeText(jupAddress).then(function() {
-      alert('CA copied to clipboard!');
-    }, function(err) {
-      console.error('Could not copy text: ', err);
-    });
-  });
+
+
+  var copybtn = document.getElementById("copyButton");
+  var link = document.getElementById("link");
+
+  copybtn.onclick = function () {
+    navigator.clipboard.writeText(link.innerHTML);
+    copybtn.innerHTML="Copied CA"
+    setTimeout(function (){
+      copybtn.innerHTML="Spin Trump"
+    }, 1000)
+  }  
+
+  // document.getElementById('copyButton').addEventListener('click', function() {
+  //   // Replace 'JUP_ADDRESS' with the actual address you want to copy
+  //   const jupAddress = '7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump';
+  //   navigator.clipboard.writeText(jupAddress).then(function() {
+  //     alert('CA copied to clipboard!');
+  //   }, function(err) {
+  //     console.error('Could not copy text: ', err);
+  //   });
+  // });
+
+  
 </script>
 </body>
 </html>
