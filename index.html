@@ -324,6 +324,8 @@
       );
       transform: rotate(45deg);
       animation: shine 6s infinite;
+      margin: 0 auto;
+      max-width: 300px;
     }   
 
     .speed-control:hover {
@@ -452,6 +454,19 @@
       }
       .hide-on-mobile {
         display: none !important;
+      }
+
+      .speed-control {
+        max-width: 200px;
+        padding: 10px;
+      }
+
+      .custom-slider {
+        width: 100%;
+      }
+
+      .mode-label {
+        font-size: 12px;
       }
     }
   </style>
@@ -821,6 +836,6 @@
       console.log('Audio play was prevented:', error);
     });
   });
-</script>    
+</script>
 </body>
 </html>
