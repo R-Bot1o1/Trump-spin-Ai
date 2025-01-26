@@ -517,7 +517,7 @@
         font-size: 12px;
       }
 
-      #contacta {
+      #ca {
         font-size: 10px;
         color: white;
       }
@@ -570,7 +570,11 @@
           
           <p style="color: rgb(8, 0, 0); font-weight: bold;">Current market cap</p>
           <div class="cyber-panel px-6 py-3" id="marketCap">$9,447</div>
-          <p id="contacta" style="color: rgb(8, 0, 0); font-weight: bold;">pasteca</p>
+          <p id="ca" style="color: rgb(8, 0, 0); font-weight: bold;">7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump</p>
+          <button id="twitterButton" class="cyber-button" style="font-size: 16px; padding: 10px 20px; font-weight: bold;">Follow us on Twitter</button>
+        
+        
+
         </div>
       </div>
     </div>
@@ -625,6 +629,8 @@
 
       <button id="muteButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Mute</button>
       
+      
+
       <script>
         document.addEventListener('DOMContentLoaded', function() {
           var audio = document.getElementById("audio");
@@ -666,6 +672,11 @@
           "GLTFLoader": "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/jsm/loaders/GLTFLoader.js"
         }
       }
+    </script>
+    <script>
+      document.getElementById('twitterButton').addEventListener('click', function() {
+        window.location.href = 'https://x.com/Trumpspin_sol';
+      });
     </script>
     <script src="popup.js"></script>
     <script type="module">
@@ -764,7 +775,7 @@
 
     /////IMPORTANT PART BELOW/////
  
-      const JUP_ADDRESS = "pasteca";
+      const JUP_ADDRESS = "PasteCA";
       const TOTAL_SUPPLY = 1000000000;
       let rotationSpeed = 0.01;
  
@@ -885,7 +896,7 @@
 <button id="copyButton" style="position: fixed; bottom: 50%; right: 20%; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;">Click to Copy CA</button>
 <div class="copyfield">
   <!-- Add real ca here!! -->
-  <span id="link" visiblility: hidden>pasteca</span>
+  <span id="link" visiblility: hidden>PasteCA</span>
   <span id="copyButton" style="position: fixed; bottom: 10px; right: 10px; z-index: 1000; font-size: 16px; padding: 10px 20px; font-weight: bold;" visiblility: hidden>Copy</span>
 </div>
 <script>
@@ -904,7 +915,7 @@
 
   // document.getElementById('copyButton').addEventListener('click', function() {
   //   // Replace 'JUP_ADDRESS' with the actual address you want to copy
-  //   const jupAddress = 'pasteca';
+  //   const jupAddress = '7RDvypx3p9EWq4nZZKux1ZQAc7DUWXpHTVKxCCnupump';
   //   navigator.clipboard.writeText(jupAddress).then(function() {
   //     alert('CA copied to clipboard!');
   //   }, function(err) {
